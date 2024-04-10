@@ -5,8 +5,13 @@ let s = 10;
 document.getElementById('hours').innerText = h;
 document.getElementById('minutes').innerText = m;
 
-const divElem = document.getElementsByClassName('center');
+let divElem = document.querySelector(".center");
+let list = divElem.classList;
+console.log(list);
 
+const gifElem = document.querySelector(".gif-space");
+console.log(gifElem);
+let list_gif = gifElem.classList;
 
 
 const countDown = setInterval(function(){
@@ -17,5 +22,7 @@ const countDown = setInterval(function(){
     if(sStr === '00'){
         alert("buon anno!");
         clearInterval(countDown);
+        list.add("none");
+        list_gif.remove("none");
     }
 },1000) 
